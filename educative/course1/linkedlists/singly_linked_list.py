@@ -39,6 +39,18 @@ class SinglyLinkedList:
 
         last.next = new
 
+    def print_list(self):
+        if self.is_empty():
+            print("list is empty")
+            return
+        else:
+            current = self.head
+            while current.next is not None:
+                print(current.value)
+                current = current.next
+
+            print(current.value)
+
 
 def main():
     example = SinglyLinkedList()
