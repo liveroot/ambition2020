@@ -56,6 +56,18 @@ class SinglyLinkedList:
             new.next = current.next
             current.next = new
 
+    def search_node(self, value):
+        if self.is_empty():
+            return False
+
+        current = self.head
+        while current.next is not None:
+            if current.value is value:
+                return True
+            current = current.next
+
+        return False
+
     def print_list(self):
         if self.is_empty():
             print("list is empty")

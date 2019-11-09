@@ -17,6 +17,11 @@ def main():
 
     example.print_list()
 
+    if example.search_node(7):
+        print("node is found")
+    else:
+        print("node not found")
+
 
 if __name__ == '__main__':
     main()
