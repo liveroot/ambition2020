@@ -39,31 +39,31 @@ class SinglyLinkedList:
 
         last.next = new
 
+    def insert_after(self, prev, data):
+        if self.is_empty():
+            self.insert_at_head(data)
+            return
+
+        new = Node()
+        new.value = data
+
+        current = self.head
+
+        while current.next is not None and current.value is not prev:
+            current = current.next
+
+        if current is not None:
+            new.next = current.next
+            current.next = new
+
     def print_list(self):
         if self.is_empty():
             print("list is empty")
             return
-        else:
-            current = self.head
-            while current.next is not None:
-                print(current.value)
-                current = current.next
 
+        current = self.head
+        while current.next is not None:
             print(current.value)
+            current = current.next
 
-
-def main():
-    example = SinglyLinkedList()
-
-    example.insert_at_head(5)
-    example.insert_at_head(6)
-    example.insert_at_head(7)
-    example.insert_at_end(10)
-    example.insert_at_head(8)
-    example.insert_at_end(9)
-
-    example.print_list()
-
-
-if __name__ == "__main__":
-    main()
+        print(current.value)
