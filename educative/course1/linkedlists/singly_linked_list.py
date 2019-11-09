@@ -12,6 +12,18 @@ class SinglyLinkedList:
         if self.head is None:
             return True
 
+    def insert_at_head(self, data):
+        if self.is_empty():
+            self.head = Node()
+            self.head.value = data
+            return
+
+        new = Node()
+        new.value = data
+        new.next = self.head
+
+        self.head = new
+
 
 def main():
     example = SinglyLinkedList()
