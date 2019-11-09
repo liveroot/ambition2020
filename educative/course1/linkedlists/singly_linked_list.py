@@ -55,6 +55,15 @@ class SinglyLinkedList:
 def main():
     example = SinglyLinkedList()
 
+    example.insert_at_head(5)
+    example.insert_at_head(6)
+    example.insert_at_head(7)
+    example.insert_at_end(10)
+    example.insert_at_head(8)
+    example.insert_at_end(9)
+
+    example.print_list()
+
 
 if __name__ == "__main__":
     main()
