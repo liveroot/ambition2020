@@ -35,6 +35,11 @@ def main():
     example.delete_by_value(12)
     example.print_list()
 
+    # deleting by value
+    print("deleting at end...")
+    example.delete_at_end()
+    example.print_list()
+
     # searching in linked list
     print("searching node...")
     if example.search_node(7):

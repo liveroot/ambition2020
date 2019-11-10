@@ -77,6 +77,19 @@ class SinglyLinkedList:
         current = self.head
         self.head = current.next
 
+    def delete_at_end(self):
+        if self.is_empty():
+            print("list is empty")
+            return
+
+        current = self.head
+        prev = None
+        while current.next is not None:
+            prev = current
+            current = current.next
+
+        prev.next = None
+
     def delete_by_value(self, data):
         if self.is_empty():
             print("list is empty")
