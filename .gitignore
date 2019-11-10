@@ -1,4 +1,7 @@
+# ----> PyCharm IDEA
 .idea/
-/venv/
-/__pycache__/
-.pyc
+
+# ---> python
+venv/
+__pycache__/
+*.pyc
