@@ -80,6 +80,50 @@ class DoublyLinkedList:
 
         return False
 
+    def delete_at_head(self):
+        if self.is_empty():
+            print("list is empty")
+            return
+
+        current = self.head
+        self.head = current.next
+        self.head.prev = None
+
+    def delete_at_end(self):
+        if self.is_empty():
+            print("list is empty")
+            return
+
+        if self.head.next is None:
+            self.head = None
+            return
+
+        current = self.head
+        while current.next is not None:
+            current = current.next
+
+        current.prev.next = None
+
+    def delete_by_value(self, data):
+        if self.is_empty():
+            print("list is empty")
+            return
+
+        current = self.head
+
+        if current.value is data:
+            self.delete_at_head()
+            return
+
+        while current.next is not None:
+            if current.value is data:
+                current.next.prev = current.prev
+                current.prev.next = current.next
+                return
+            current = current.next
+
+        print("value not found")
+
     def print_list(self):
         if self.is_empty():
             print("list is empty")
