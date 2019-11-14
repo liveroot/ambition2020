@@ -67,6 +67,19 @@ class DoublyLinkedList:
             current.next.prev = new
         current.next = new
 
+    def search_node(self, data):
+        if self.is_empty():
+            print("list is empty")
+            return False
+
+        current = self.head
+        while current.next is not None:
+            if current.value is data:
+                return True
+            current = current.next
+
+        return False
+
     def print_list(self):
         if self.is_empty():
             print("list is empty")
