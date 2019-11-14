@@ -25,6 +25,28 @@ def main():
     # printing list
     example.print_list()
 
+    # deleting at head
+    print("deleting at head...")
+    example.delete_at_head()
+    example.print_list()
+
+    # deleting by value
+    print("deleting by value...")
+    example.delete_by_value(12)
+    example.print_list()
+
+    # deleting by value
+    print("deleting at end...")
+    example.delete_at_end()
+    example.print_list()
+
+    # searching in linked list
+    print("searching node...")
+    if example.search_node(7):
+        print("node is found")
+    else:
+        print("node not found")
+
 
 if __name__ == '__main__':
     main()
