@@ -42,13 +42,13 @@ class DoublyLinkedList:
         while current.next is not None:
             current = current.next
 
-        new.prev = current
         current.next = new
+        new.prev = current
 
     def insert_after(self, after, data):
         if self.is_empty():
             print("list is empty")
-            return None
+            return
 
         new = Node()
         new.value = data
@@ -63,16 +63,18 @@ class DoublyLinkedList:
 
         new.prev = current
         new.next = current.next
+        if current.next is not None:
+            current.next.prev = new
         current.next = new
 
-        def print_list(self):
-            if self.is_empty():
-                print("list is empty")
-                return
+    def print_list(self):
+        if self.is_empty():
+            print("list is empty")
+            return
 
-            current = self.head
-            while current.next is not None:
-                print(current.value)
-                current = current.next
-
+        current = self.head
+        while current.next is not None:
             print(current.value)
+            current = current.next
+
+        print(current.value)
