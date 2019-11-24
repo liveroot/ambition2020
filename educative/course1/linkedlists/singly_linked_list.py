@@ -58,7 +58,6 @@ class SinglyLinkedList:
 
     def search_node(self, data):
         if self.is_empty():
-            print("list is empty")
             return False
 
         current = self.head
@@ -71,7 +70,6 @@ class SinglyLinkedList:
 
     def delete_at_head(self):
         if self.is_empty():
-            print("list is empty")
             return
 
         current = self.head
@@ -79,7 +77,6 @@ class SinglyLinkedList:
 
     def delete_at_end(self):
         if self.is_empty():
-            print("list is empty")
             return
 
         current = self.head
@@ -92,7 +89,6 @@ class SinglyLinkedList:
 
     def delete_by_value(self, data):
         if self.is_empty():
-            print("list is empty")
             return
 
         current = self.head
@@ -109,7 +105,7 @@ class SinglyLinkedList:
             prev = current
             current = current.next
 
-        print("value not found")
+        print("can't delete, value not found")
 
     def print_list(self):
         if self.is_empty():
@@ -122,3 +118,5 @@ class SinglyLinkedList:
             current = current.next
 
         print(current.value)
+
+        print("head:", self.head.value)

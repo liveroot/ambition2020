@@ -24,9 +24,7 @@ class DoublyLinkedList:
         new.prev = None
         new.next = self.head
 
-        if self.head is not None:
-            self.head.prev = new
-
+        self.head.prev = new
         self.head = new
 
     def insert_at_end(self, data):
@@ -34,33 +32,31 @@ class DoublyLinkedList:
             self.insert_at_head(data)
             return
 
-        new = Node()
-        new.value = data
-        new.next = None
-
         current = self.head
         while current.next is not None:
             current = current.next
+
+        new = Node()
+        new.value = data
+        new.next = None
 
         current.next = new
         new.prev = current
 
     def insert_after(self, after, data):
         if self.is_empty():
-            print("list is empty")
             return
-
-        new = Node()
-        new.value = data
 
         current = self.head
         while current.next is not None and current.value is not after:
             current = current.next
 
         if current is None:
-            print("value not found")
+            print("can't insert, value not found")
             return
 
+        new = Node()
+        new.value = data
         new.prev = current
         new.next = current.next
         if current.next is not None:
@@ -69,7 +65,6 @@ class DoublyLinkedList:
 
     def search_node(self, data):
         if self.is_empty():
-            print("list is empty")
             return False
 
         current = self.head
@@ -82,7 +77,6 @@ class DoublyLinkedList:
 
     def delete_at_head(self):
         if self.is_empty():
-            print("list is empty")
             return
 
         current = self.head
@@ -91,7 +85,6 @@ class DoublyLinkedList:
 
     def delete_at_end(self):
         if self.is_empty():
-            print("list is empty")
             return
 
         if self.head.next is None:
@@ -106,7 +99,6 @@ class DoublyLinkedList:
 
     def delete_by_value(self, data):
         if self.is_empty():
-            print("list is empty")
             return
 
         current = self.head
@@ -122,7 +114,7 @@ class DoublyLinkedList:
                 return
             current = current.next
 
-        print("value not found")
+        print("can't delete, value not found")
 
     def print_list(self):
         if self.is_empty():
@@ -135,3 +127,5 @@ class DoublyLinkedList:
             current = current.next
 
         print(current.value)
+
+        print("head:", self.head.value)
