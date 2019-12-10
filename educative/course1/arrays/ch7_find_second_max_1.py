@@ -2,7 +2,7 @@ array = [9, 2, 3, 6]
 result = 6
 
 
-# traversing arrays twice
+# traversing array twice
 def find_second_max_1(arr):
     maximum = -1
     for x in arr:
