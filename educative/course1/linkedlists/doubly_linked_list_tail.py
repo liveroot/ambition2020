@@ -127,12 +127,22 @@ class DoublyLinkedListTail:
             print("list is empty")
             return
 
+        pretty_list = self.prettify()
+        print(pretty_list)
+
+    def prettify(self):
+        start_tag = "[H] None <- "
+        end_tag = " -> None [T]"
+        printer = ""
+
+        printer += start_tag
+
         current = self.head
         while current.next is not None:
-            print(current.value)
+            printer += str(current.value) + " <-> "
             current = current.next
 
-        print(current.value)
+        printer += str(current.value)
+        printer += end_tag
 
-        print("head:", self.head.value)
-        print("tail:", self.tail.value)
+        return printer
