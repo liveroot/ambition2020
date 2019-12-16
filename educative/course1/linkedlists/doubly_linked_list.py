@@ -125,17 +125,23 @@ class DoublyLinkedList:
         print(pretty_list)
 
     def prettify(self):
-        start_tag = "[H] None <- "
-        end_tag = " -> None"
+        start_tag = "[H] None"
+        end_tag = "None"
         printer = ""
 
         printer += start_tag
+        printer += ' <- '
 
         current = self.head
-        while current.next is not None:
-            printer += str(current.value) + " <-> "
+        while current is not None:
+            printer += str(current.value)
             current = current.next
 
-        printer += str(current.value)
+            if current:
+                printer += " <-> "
+            else:
+                printer += " -> "
+
         printer += end_tag
+
         return printer

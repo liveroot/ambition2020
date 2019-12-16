@@ -117,16 +117,17 @@ class SinglyLinkedList:
 
     def prettify(self):
         start_tag = "[H] "
-        end_tag = " -> None"
+        end_tag = "None"
         printer = ""
 
         printer += start_tag
         current = self.head
-        while current.next is not None:
-            printer += str(current.value) + " -> "
+        while current is not None:
+            printer += str(current.value)
             current = current.next
 
-        printer += str(current.value)
+            printer += " -> "
+
         printer += end_tag
 
         return printer
