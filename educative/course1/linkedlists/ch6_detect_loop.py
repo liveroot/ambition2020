@@ -30,7 +30,7 @@ def main():
     # a textual representation of a looped input_linked_list to print as Input
     printer = "[H] "
     for i in range(3):
-        for x in incoming_input[0:3]:
+        for x in incoming_input:
             printer += str(x) + ' -> '
 
     printer += "..."
