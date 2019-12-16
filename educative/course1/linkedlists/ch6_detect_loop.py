@@ -9,7 +9,7 @@ def detect_loop(linked_list):
     slow = linked_list.head
     fast = linked_list.head
 
-    while slow and fast:
+    while slow and fast and fast.next:
         slow = slow.next
         fast = fast.next.next
 
