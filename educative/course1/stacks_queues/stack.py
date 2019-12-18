@@ -28,6 +28,7 @@ class Stack:
 
         self.elements.append(data)
         self.top += 1
+        print("pushed data = " + str(data))
 
     def pop(self):
         if self.is_empty():
@@ -38,11 +39,12 @@ class Stack:
         self.elements.remove(result)
         self.top -= 1
 
+        print("popped data = " + str(result))
         return result
 
     def print_stack(self):
         if self.is_empty():
-            print("nothing to print, stack empty...")
+            print("0 -> [   ]")
             return None
 
         pretty_list = self.prettify()
