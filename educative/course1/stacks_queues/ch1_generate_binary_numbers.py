@@ -8,8 +8,8 @@ def generate_binary_numbers(target_number):
     result = []
     n = target_number
 
-    # initialize queue with capactiy  n + 1, because
-    # we are enqueing 2 values for each dequeue()
+    # initialize queue with capacity  n + 1, because
+    # we are enqueueing 2 values for each dequeue()
     queue = q.Queue(n + 1)
 
     # initialize queue with first value to start the conversion
