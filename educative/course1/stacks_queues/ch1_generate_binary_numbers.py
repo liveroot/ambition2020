@@ -4,9 +4,9 @@ input_data = 3
 expected_output_data = [1, 10, 11]
 
 
-def generate_binary_numbers(input_data):
+def generate_binary_numbers(target_number):
     result = []
-    n = input_data
+    n = target_number
 
     # initialize queue with capactiy  n + 1, because
     # we are enqueing 2 values for each dequeue()
@@ -16,7 +16,7 @@ def generate_binary_numbers(input_data):
     queue.enqueue(1)
 
     # for each entry:
-    # 1. dequeue from the list and add to result array
+    # 1. dequeue from the queue and add to result array
     # 2. append 0 and enqueue it back
     # 3. append 1 and enqueue it back
     # this process enqueues binary form of each entry to the result array
