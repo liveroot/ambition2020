@@ -2,7 +2,7 @@ class Stack:
     def __init__(self, capacity=None):
         self.capacity = capacity
         self.top = -1
-        self.elements = []
+        self.elements = [None] * self.capacity
 
     def is_empty(self):
         if self.top is -1:
@@ -26,8 +26,8 @@ class Stack:
             print("can't push anymore, stack full...")
             return None
 
-        self.elements.append(data)
         self.top += 1
+        self.elements[self.top] = data
         print("pushed data = " + str(data))
 
     def pop(self):
@@ -36,17 +36,13 @@ class Stack:
             return None
 
         result = self.elements[self.top]
-        self.elements.remove(result)
+        self.elements[self.top] = None
         self.top -= 1
 
         print("popped data = " + str(result))
         return result
 
     def print_stack(self):
-        if self.is_empty():
-            print("0 -> [   ]")
-            return None
-
         pretty_list = self.prettify()
         print(pretty_list)
 
