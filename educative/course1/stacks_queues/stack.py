@@ -19,7 +19,7 @@ class Stack:
             print("nothing to show, stack empty...")
             return None
 
-        return str(self.elements[self.top])
+        return self.elements[self.top]
 
     def push(self, data):
         if self.is_full():
@@ -28,7 +28,7 @@ class Stack:
 
         self.top += 1
         self.elements[self.top] = data
-        print("pushed data = " + str(data))
+        #print("pushed data = " + str(data))
 
     def pop(self):
         if self.is_empty():
@@ -39,7 +39,7 @@ class Stack:
         self.elements[self.top] = None
         self.top -= 1
 
-        print("popped data = " + str(result))
+        #print("popped data = " + str(result))
         return result
 
     def print_stack(self):
