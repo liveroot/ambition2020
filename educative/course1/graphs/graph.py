@@ -3,7 +3,8 @@ import educative.course1.linkedlists.doubly_linked_list_tail as dll_t
 
 # implemented as adjacency list
 class Graph:
-    def __init__(self, num_vertices):
+    def __init__(self, num_vertices=0, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.num_vertices = num_vertices
         self.adjacency_list = [None] * self.num_vertices
 
@@ -20,12 +21,12 @@ class Graph:
         else:
             # for directed graphs ----------------------------------
             self.adjacency_list[source].insert_at_end(destination)
-            print("added edge: " + str(source) + " -> " + str(destination))
+            if not self.suppress_printing: print("added edge: " + str(source) + " -> " + str(destination))
             # ------------------------------------------------------
 
             # for undirected graphs --------------------------------
             # self.adjacency_list[destination].insert_at_end(source)
-            # print("added edge: " + str(source) + " <- " + str(destination))
+            # if not self.suppress_printing: print("added edge: " + str(source) + " <- " + str(destination))
             # ------------------------------------------------------
 
         return None
