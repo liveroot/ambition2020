@@ -145,9 +145,8 @@ class DoublyLinkedListTail:
 
             if current:
                 printer += " <-> "
-            else:
-                printer += " -> "
 
+        printer += " -> "
         printer += end_tag
 
         return printer
