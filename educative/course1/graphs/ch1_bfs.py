@@ -44,7 +44,7 @@ def bfs_traversal(graph, root):
 
 def main():
     # create a graph from input data
-    graph = g.Graph(input_num_vertices, True) # supress_printing = True
+    graph = g.Graph(input_num_vertices, True) # suppress_printing = True
     for x in input_edges.keys():
         for y in input_edges[x]:
             graph.add_edge(x, y)
