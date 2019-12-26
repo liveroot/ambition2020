@@ -11,10 +11,11 @@ import educative.course1.stacks_queues.stack as s
 # 6. Finally stack 2 is emptied back into stack 1 and the queue returns to normal.
 # 7. Finally, result is returned to the caller
 class QueueUsingStacks_1:
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.capacity = capacity
-        self.stack1 = s.Stack(self.capacity)
-        self.stack2 = s.Stack(self.capacity)
+        self.stack1 = s.Stack(self.capacity, suppress_printing)
+        self.stack2 = s.Stack(self.capacity, suppress_printing)
 
     def is_empty(self):
         if self.stack1.is_empty():
@@ -47,7 +48,7 @@ class QueueUsingStacks_1:
             return False
 
         self.stack1.push(data)
-        print("enqueued data = " + str(data))
+        if not self.suppress_printing: print("enqueued data = " + str(data))
 
         return True
 
@@ -64,7 +65,7 @@ class QueueUsingStacks_1:
         while not self.stack2.is_empty():
             self.stack1.push(self.stack2.pop())
 
-        print("dequeued data = " + str(result))
+        if not self.suppress_printing: print("dequeued data = " + str(result))
         return result
 
     def print_queue(self):

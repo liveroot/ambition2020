@@ -9,7 +9,7 @@ expected_output = True
 # if the current character is not the closing parentheses of the popped element, it means the string is not balanced, so return False
 def check_balanced(expression):
     input_chars = list(expression)
-    stack = s.Stack(len(input_chars))
+    stack = s.Stack(len(input_chars), True) # suppress_printing = True
 
     for char in input_chars:
         if char is "{" or char is "[" or char is "(":

@@ -3,7 +3,7 @@ import educative.course1.stacks_queues.ch4_queue_using_stacks_2 as queue
 
 def main():
     print("Queue initialized with capacity = 5")
-    example = queue.QueueUsingStacks_2(5)
+    example = queue.QueueUsingStacks_2(5, True) # suppress_printing = True
 
     print("------")
     print("enqueuing in queue...")

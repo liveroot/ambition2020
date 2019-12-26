@@ -15,7 +15,7 @@ expected_output_data = [2, 4, 12, 23, 42, 60, 97]
 # NOTE - This can also be done by recursion ---
 # ---------------------------------------------
 def sort_stack_1(stack):
-    result = s.Stack(stack.capacity)
+    result = s.Stack(stack.capacity, True) # suppress_printing = True
 
     while not stack.is_empty():
         value = stack.pop()
@@ -31,10 +31,10 @@ def sort_stack_1(stack):
 
 
 def main():
-    input_stack = s.Stack(len(input_data))
+    input_stack = s.Stack(len(input_data), True) # suppress_printing = True
     [input_stack.push(x) for x in input_data]
 
-    expected_output_stack = s.Stack(len(expected_output_data))
+    expected_output_stack = s.Stack(len(expected_output_data), True) # suppress_printing = True
     [expected_output_stack.push(x) for x in expected_output_data]
 
     print("Input: \n" + str(input_stack.prettify()))

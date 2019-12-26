@@ -31,7 +31,7 @@ expected_output_data = [6, 8, 8, 8, -1, -1]
 # return the result array
 
 def next_greater_element_2(input_data):
-    stack = s.Stack(len(input_data))
+    stack = s.Stack(len(input_data), True) # suppress_printing = True
     result = []
 
     for x in input_data:

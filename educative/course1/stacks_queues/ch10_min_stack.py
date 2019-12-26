@@ -26,10 +26,11 @@ import educative.course1.stacks_queues.stack as s
 #       return min_stack.peek() -> (top of min_stack)
 # ---------
 class MinStack():
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.capacity = capacity
-        self.stack = s.Stack(capacity)
-        self.min_stack = s.Stack(capacity)
+        self.stack = s.Stack(capacity, suppress_printing)
+        self.min_stack = s.Stack(capacity, suppress_printing)
 
     def is_full(self):
         if self.stack.is_full():
@@ -47,13 +48,16 @@ class MinStack():
             return None
 
         self.stack.push(data)
+        if not self.suppress_printing: print("pushed data = " + str(data))
 
         if self.min_stack.is_empty():
             self.min_stack.push(data)
+            if not self.suppress_printing: print("pushed data to min stack = " + str(data))
             return None
 
         if data <= self.min_stack.peek():
             self.min_stack.push(data)
+            if not self.suppress_printing: print("pushed data to min stack = " + str(data))
 
         return None
 
@@ -64,9 +68,13 @@ class MinStack():
 
         if not self.min_stack.is_empty():
             if self.min_stack.peek() is self.stack.peek():
-                self.min_stack.pop()
+                min_pop = self.min_stack.pop()
+                if not self.suppress_printing: print("popped data from min stack= " + str(min_pop))
 
-        return self.stack.pop()
+        popped = self.stack.pop()
+        if not self.suppress_printing: print("popped data (main stack) = " + str(popped))
+
+        return popped
 
     def peek(self):
         if self.stack.is_empty():

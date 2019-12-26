@@ -1,5 +1,6 @@
 class TwoStacks():
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.capacity = capacity
         self.elements = [None] * self.capacity
         self.top1 = -1
@@ -23,7 +24,7 @@ class TwoStacks():
         if self.top1 < self.top2 - 1:
             self.top1 += 1
             self.elements[self.top1] = data
-            print("stack1 - pushed data = " + str(data))
+            if not self.suppress_printing: print("stack1 - pushed data = " + str(data))
         return None
 
     def push2(self, data):
@@ -34,7 +35,7 @@ class TwoStacks():
         if self.top2 > self.top1 + 1:
             self.top2 -= 1
             self.elements[self.top2] = data
-            print("stack2 - pushed data = " + str(data))
+            if not self.suppress_printing: print("stack2 - pushed data = " + str(data))
         return None
 
     def pop1(self):
@@ -46,7 +47,7 @@ class TwoStacks():
             result = self.elements[self.top1]
             self.elements[self.top1] = None
             self.top1 -= 1
-            print("stack1 - popped data = " + str(result))
+            if not self.suppress_printing: print("stack1 - popped data = " + str(result))
             return result
         return None
 
@@ -59,7 +60,7 @@ class TwoStacks():
             result = self.elements[self.top2]
             self.elements[self.top2] = None
             self.top2 += 1
-            print("stack2 - popped data = " + str(result))
+            if not self.suppress_printing: print("stack2 - popped data = " + str(result))
             return result
         return None
 

@@ -10,7 +10,7 @@ def generate_binary_numbers(target_number):
 
     # initialize queue with capacity  n + 1, because
     # we are enqueueing 2 values for each dequeue()
-    queue = q.Queue(n + 1)
+    queue = q.Queue(n + 1, True) # suppress_printing = True
 
     # initialize queue with first value to start the conversion
     queue.enqueue(1)

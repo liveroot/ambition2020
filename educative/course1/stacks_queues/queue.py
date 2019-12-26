@@ -1,5 +1,6 @@
 class Queue:
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.capacity = capacity
         self.elements = []
         self.current_size = 0
@@ -28,7 +29,7 @@ class Queue:
 
         self.elements.append(data)
         self.current_size = len(self.elements)
-        print("enqueued data = " + str(data))
+        if not self.suppress_printing: print("enqueued data = " + str(data))
 
     def dequeue(self):
         if self.is_empty():
@@ -37,7 +38,7 @@ class Queue:
 
         result = self.elements.pop(0)
         self.current_size = len(self.elements)
-        print("dequeued data = " + str(result))
+        if not self.suppress_printing: print("dequeued data = " + str(result))
 
         return result
 

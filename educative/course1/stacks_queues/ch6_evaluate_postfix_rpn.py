@@ -11,7 +11,7 @@ expected_output_data = 3
 # we pop last two numerical items from the stack and perform the operation
 def evaluate_postfix_rpn(expression_string):
     expression = list(expression_string)
-    temp_stack = s.Stack(len(expression))
+    temp_stack = s.Stack(len(expression), True) # suppress_printing = True
     valid_input = ["+", "-", "/", "*"]
 
     for c in expression:

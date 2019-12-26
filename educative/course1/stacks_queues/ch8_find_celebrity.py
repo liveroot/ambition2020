@@ -40,7 +40,7 @@ expected_output_data = 2
 #    else:
 #        guest is a celebrity and return guest id
 def find_celebrity(party_data, num_people):
-    stack = s.Stack(num_people)
+    stack = s.Stack(num_people, True) # suppress_printing = True
     celebrity = -1
 
     for i in range(num_people):

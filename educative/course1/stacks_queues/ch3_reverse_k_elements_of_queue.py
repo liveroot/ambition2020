@@ -7,7 +7,7 @@ expected_output_data = [5, 4, 3, 2, 1, 6, 7, 8, 9, 10]
 
 
 def reverse_k_elements(queue, k):
-    temp_stack = s.Stack(k)
+    temp_stack = s.Stack(k, True) # suppress_printing = True
 
     for i in range(k):
         temp_stack.push(queue.dequeue())
@@ -22,10 +22,10 @@ def reverse_k_elements(queue, k):
 
 
 def main():
-    input_queue = q.Queue(len(input_data))
+    input_queue = q.Queue(len(input_data), True) # suppress_printing = True
     [input_queue.enqueue(x) for x in input_data]
 
-    expected_output_queue = q.Queue(len(expected_output_data))
+    expected_output_queue = q.Queue(len(expected_output_data), True) # suppress_printing = True
     [expected_output_queue.enqueue(x) for x in expected_output_data]
 
     print("Input: " + str(input_queue.prettify()))

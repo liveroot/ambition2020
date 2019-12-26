@@ -2,8 +2,8 @@ import educative.course1.stacks_queues.ch10_min_stack as min_stack
 
 
 def main():
-    print("Stack initialized with capacity = 5")
-    example = min_stack.MinStack(6)
+    print("Stack initialized with capacity = 6")
+    example = min_stack.MinStack(6, True) # suppress_printing = True
 
     print("------")
     print("pushing to stack...")
@@ -28,6 +28,7 @@ def main():
     example.pop()
 
     print()
+    print("peeking from stack...")
     print(example.peek())
 
     print()
@@ -86,6 +87,13 @@ def main():
     print()
     print("pushing to stack...")
     example.push(2)
+    example.print_stack()
+    example.print_min_stack()
+    print("minimum: " + str(example.min()))
+
+    print()
+    print("popping from stack...")
+    example.pop()
     example.print_stack()
     example.print_min_stack()
     print("minimum: " + str(example.min()))

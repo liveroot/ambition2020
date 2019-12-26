@@ -1,5 +1,6 @@
 class Stack:
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, suppress_printing=False):
+        self.suppress_printing = suppress_printing
         self.capacity = capacity
         self.top = -1
         self.elements = [None] * self.capacity
@@ -28,7 +29,7 @@ class Stack:
 
         self.top += 1
         self.elements[self.top] = data
-        #print("pushed data = " + str(data))
+        if not self.suppress_printing: print("pushed data = " + str(data))
 
     def pop(self):
         if self.is_empty():
@@ -39,7 +40,7 @@ class Stack:
         self.elements[self.top] = None
         self.top -= 1
 
-        #print("popped data = " + str(result))
+        if not self.suppress_printing: print("popped data = " + str(result))
         return result
 
     def print_stack(self):

@@ -3,7 +3,7 @@ import educative.course1.stacks_queues.ch2_two_stacks as two_stacks
 
 def main():
     print("Stack initialized with capacity = 5")
-    example = two_stacks.TwoStacks(5)
+    example = two_stacks.TwoStacks(5, True) # suppress_printing = True
 
     print("------")
     print("pushing to stack 1...")
