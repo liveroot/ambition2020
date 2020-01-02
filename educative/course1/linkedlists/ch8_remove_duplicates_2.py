@@ -4,6 +4,7 @@ incoming_input = [7, 14, 21, 14, 22]
 expected_output = [7, 14, 21, 22]
 
 
+# using hash-set
 def remove_duplicates_2(linked_list):
     prev = linked_list.head
     current = linked_list.head
