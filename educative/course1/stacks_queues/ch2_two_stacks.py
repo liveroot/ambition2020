@@ -84,6 +84,8 @@ class TwoStacks():
         printer = ""
         for i in range(self.capacity):
             printer += str(i) + " -> [  " + str(self.elements[i]) + "  ]"
+            if i is self.top1: printer += " --> top1"
+            if i is self.top2: printer += " --> top2"
             if i is not self.capacity: printer += "\n"
 
         return printer
