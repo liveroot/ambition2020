@@ -8,7 +8,7 @@ import educative.course1.stacks_queues.stack as s
 # 3. IF stack 2 is empty, stack 1 is emptied into stack 2
 # 4. This operation reverses the order of stored elements
 #    and the top element in stack 2 represents the front of the queue
-# 5. Elements in stack 2 can be pooped for dequeuing until it goes empty.
+# 5. Elements in stack 2 can be popped for dequeuing until it goes empty.
 # 6. and IF stack2 is NOT emptied yet, it still contains the front element in the queue.
 # 7. Finally, result is popped off of stack 2 and returned to the caller
 class QueueUsingStacks_2:
